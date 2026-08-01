@@ -15,8 +15,8 @@
   --paper-line: #141310;
   --ink: #141310;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Newsreader', Georgia, serif;
+  --font-display: 'Old Standard TT', Georgia, serif;
+  --font-body: 'Old Standard TT', Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   --max-width: 1120px;
@@ -46,14 +46,14 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.05;
   margin: 0 0 0.5em 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: none;
 }
 
-h1 { font-weight: 600; }
+h1 { font-weight: 700; }
 
 a {
   color: inherit;
