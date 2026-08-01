@@ -295,44 +295,60 @@ textarea:focus-visible {
 
 /* ---------- Sections ---------- */
 section { padding: 88px 0; }
+main > section + section { border-top: var(--rule); }
 .section-alt { background: var(--chalk); }
 .section-slate { background: var(--slate); color: var(--chalk); }
 
 .section-head {
-  text-align: center;
-  max-width: 60ch;
-  margin: 0 auto 56px;
+  text-align: left;
+  max-width: 62ch;
+  margin: 0 0 56px 0;
+  border-top: var(--rule);
+  padding-top: 20px;
 }
 
 .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
-.section-head p { color: #4A5750; font-size: 1.1rem; }
-.section-slate .section-head p { color: rgba(237,235,227,0.75); }
+.section-head p { color: #4A5750; font-size: 1.1rem; margin: 0; }
+.section-slate .section-head { border-top-color: var(--chalk); }
+.section-slate .section-head p { color: rgba(237,234,225,0.75); }
 
 /* ---------- Pillars / cards grid ---------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
+  gap: 0;
+  border-top: var(--rule);
+  border-left: var(--rule);
 }
 
 .card {
   background: var(--paper);
-  border: var(--rule);
+  border-right: var(--rule);
+  border-bottom: var(--rule);
   padding: 32px 28px;
 }
 
 .card .num {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--brass);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--chalk);
+  background: var(--ink);
   letter-spacing: 0.08em;
-  margin-bottom: 14px;
-  display: block;
+  margin-bottom: 18px;
+  padding: 3px 9px;
+  display: inline-block;
+}
+
+.section-slate .card .num {
+  background: var(--chalk);
+  color: var(--ink);
 }
 
 .card h3 { font-size: 1.25rem; margin-bottom: 0.5em; }
 .card p { color: #4A5750; margin: 0; }
 
+.section-slate .grid { border-color: var(--chalk); }
 .section-slate .card {
   background: transparent;
   border-color: var(--chalk);
@@ -343,9 +359,17 @@ section { padding: 88px 0; }
 .stat-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
+  gap: 0;
   text-align: center;
+  border: var(--rule);
+  border-color: var(--chalk);
 }
+
+.stat {
+  padding: 24px 16px;
+  border-right: 1px solid rgba(237,234,225,0.3);
+}
+.stat:last-child { border-right: none; }
 
 .stat .figure {
   font-family: var(--font-display);
@@ -409,11 +433,11 @@ section { padding: 88px 0; }
 .timeline .entry::before {
   content: "";
   position: absolute;
-  left: -38px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  background: var(--brass);
+  left: -39px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: var(--ink);
   border: 2px solid var(--paper);
 }
 .timeline .when {
@@ -481,9 +505,9 @@ textarea { resize: vertical; min-height: 100px; }
   display: flex;
   gap: 20px;
   padding: 28px 0;
-  border-top: 1px solid var(--paper-line);
+  border-top: var(--rule);
 }
-.way-card:last-child { border-bottom: 1px solid var(--paper-line); }
+.way-card:last-child { border-bottom: var(--rule); }
 .way-card .icon {
   font-family: var(--font-display);
   font-style: italic;
@@ -498,12 +522,12 @@ textarea { resize: vertical; min-height: 100px; }
 /* ---------- Resource list ---------- */
 .resource-item {
   padding: 26px 0;
-  border-top: 1px solid var(--paper-line);
+  border-top: var(--rule);
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 24px;
 }
-.resource-item:last-child { border-bottom: 1px solid var(--paper-line); }
+.resource-item:last-child { border-bottom: var(--rule); }
 .resource-item .tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
